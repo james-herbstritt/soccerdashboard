@@ -16,10 +16,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "precommit": "lint-staged"
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "app/**/*.{js,es6,jsx, css, scss}": [
+    "app/**/*.{js,es6,jsx,css,scss,html.erb,json}": [
       "./node_modules/prettier/bin/prettier.js --trailing-comma --single-quote es6 --write",
       "git add"
     ],
