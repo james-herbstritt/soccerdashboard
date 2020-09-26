@@ -1,3 +1,6 @@
 [submodule "data"]
 	path = app/assets/data
 	url = git@github.com:fivethirtyeight/data.git
+[submodule "app/assets/data"]
+	path = app/assets/data
+	url = git@github.com:fivethirtyeight/data.git
