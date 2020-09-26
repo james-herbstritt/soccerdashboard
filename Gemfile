@@ -44,6 +44,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Rubocop is a ruby code formatter
   gem 'rubocop', '~> 0.92.0', require: false
+  # Erb lint is for linting erb files
+  gem 'erb_lint', require: false
 end
 
 group :test do

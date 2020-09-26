@@ -15,17 +15,20 @@
     "prettier": "^2.1.2",
     "webpack-dev-server": "^3.11.0"
   },
-  "scripts": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "app/**/*.{js,es6,jsx,css,scss,html.erb,json}": [
-      "./node_modules/prettier/bin/prettier.js --trailing-comma --single-quote es6 --write",
-      "git add"
+    "app/**/*.{js,es6,jsx,css,scss,json}": [
+      "prettier --write"
     ],
     "{app,test}/**/*.rb": [
-      "bundle exec rubocop -a",
-      "git add"
+      "bundle exec rubocop -a"
+    ],
+    "{app,test}/**/*.html.erb": [
+        "bundle exec erblint -a"
     ]
   }
 }
