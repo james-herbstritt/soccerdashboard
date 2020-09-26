@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "app/**/*.{js,es6,jsx, css, scss}": [
-      "./node_modules/prettier/bin/prettier.js --trailing-comma --single-quote es5 --write",
+      "./node_modules/prettier/bin/prettier.js --trailing-comma --single-quote es6 --write",
       "git add"
     ],
     "{app,test}/**/*.rb": [
