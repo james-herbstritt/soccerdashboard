@@ -25,4 +25,10 @@ class FootballDataService
     available_leagues = competitions.select { |comp| @league_ids.include?(comp['id']) }
     available_leagues.sort_by { |league| league['name'] }
   end
+
+  #  def teams_for_league_id(id)
+  #    response = HTTParty.get('https://api.football-data.org/v2/competitions/' << id << '/teams/',
+  #                            headers: { 'X-Auth-Token' => ENV['FOOTBALL_AUTH_TOKEN'] })
+  #
+  #  end
 end

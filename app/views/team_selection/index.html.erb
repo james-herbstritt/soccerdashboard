@@ -1,20 +1,11 @@
 <form action="">
   <label for="league">League:</label>
 <select id="league" name="league">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
+  <option value="" selected>Select a League</option>
+<% @leagues.each do |league| %>
+  <option value=<%= league['id'] %>> <%= league['name'] %></option>
+<% end %>
 </select>
 <br>
-  <label for="team">Team:</label>
-<select id="team" name="team">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
-</select>
-<br>
-  <input type="submit" value="Submit">
+  <input class="btn btn-primary" type="submit" value="Submit">
 </form>
-<p><%= @leagues %></p>
