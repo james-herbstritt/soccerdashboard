@@ -28,7 +28,7 @@
       "bundle exec rubocop -a"
     ],
     "{app,test}/**/*.html.erb": [
-        "bundle exec erblint -a"
+      "bundle exec erblint -a"
     ]
   }
 }
