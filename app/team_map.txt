@@ -1,0 +1,9 @@
+2021, 'Premier League',
+2017, 'Primeira Liga',
+2003, 'Eredivisie',
+2002, 'Bundesliga',
+2015, 'Ligue 1',
+2019, 'Serie A (Italy)',
+2014, 'Primera Division',
+2016, 'Championship',
+2013, 'Serie A (Brazil)'
