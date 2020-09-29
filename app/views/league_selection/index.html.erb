@@ -1,13 +1,9 @@
 <div class="league-selection-container">
-<form action="" class="league-selection-form">
-  <div>
-  <label for="league" class="league-selection-label">League:</label>
-<select id="league" name="league">
-<% @leagues.each do |league| %>
-  <option value=<%= league['id'] %>> <%= league['name'] %></option>
-<% end %>
-</select>
-</div>
-  <input class="btn btn-block league-selection-submit" type="submit" value="Submit">
-</form>
+  <div class="league-selection-form">
+    <%= form_with(url: '/league') do |f| %>
+      <%= label_tag :league, "League:", :class => "league-selection-label" %>
+      <%= select_tag :league, options_for_select(@leagues.map { |l| [l['name'], l['id']]}) %>
+      <%= f.submit "Submit", :class => "btn btn-block league-selection-submit", :id => "league-selection-submit" %>
+    <% end %>
+  </div>
 </div>
