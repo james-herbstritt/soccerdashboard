@@ -25,10 +25,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Http client
 gem 'httparty'
-# Bootstrap
-gem 'bootstrap', '~> 4.5.0'
-# jquery rails
-gem 'jquery-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

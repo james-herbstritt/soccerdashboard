@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+
+.league-selection-container {
+  display: flex;
+  background: $baby-powder;
+  justify-content: center;
+  height: 100%;
+}
+
+.league-selection-form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.league-selection-submit {
+  background-color: $midnight-blue;
+  color: $baby-powder;
+}
+
+.league-selection-submit.btn-block:hover {
+  opacity: 0.9;
+  color: $baby-powder;
+}
+
+.league-selection-label {
+  font-size: 18px;
+}

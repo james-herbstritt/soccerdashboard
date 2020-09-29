@@ -1,11 +1,13 @@
-<form action="">
-  <label for="league">League:</label>
+<div class="league-selection-container">
+<form action="" class="league-selection-form">
+  <div>
+  <label for="league" class="league-selection-label">League:</label>
 <select id="league" name="league">
-  <option value="" selected>Select a League</option>
 <% @leagues.each do |league| %>
   <option value=<%= league['id'] %>> <%= league['name'] %></option>
 <% end %>
 </select>
-<br>
-  <input class="btn btn-primary" type="submit" value="Submit">
+</div>
+  <input class="btn btn-block league-selection-submit" type="submit" value="Submit">
 </form>
+</div>
