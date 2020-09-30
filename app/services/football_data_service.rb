@@ -13,8 +13,7 @@ class FootballDataService
                    2015,
                    2019,
                    2014,
-                   2016,
-                   2013]
+                   2016]
   end
 
   def available_leagues
