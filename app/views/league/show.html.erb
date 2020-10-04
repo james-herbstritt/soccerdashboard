@@ -1,0 +1,14 @@
+<div class="league-container">
+  <div class="team-list-container">
+    <ul class="list-group team-list">
+      <li class="list-group-item team-list-heading">Teams</li>
+      <% @teams.each do |team| %>
+        <%= link_to team['name'],
+          "/league/#{@league['competition']['id']}/team/#{team['id']}",
+          :class => "list-group-item team-list-item team-list-item-text" %>
+      <% end %>
+    </ul>
+  </div>
+  <p><%= simple_format(@selected_team.to_s) %></p>
+  <p><%= simple_format(@selected_team_matches.to_s) %></p>
+</div>

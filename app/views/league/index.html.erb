@@ -1,4 +1,26 @@
-<h1>League#index</h1>
-<p>Find me in app/views/league/index.html.erb</p>
-<p> <%= simple_format(@league.to_s) %> </p>
-<p> <%= simple_format(@teams.to_s) %> </p>
+  <div class="team-list-container">
+    <ul class="list-group team-list">
+      <li class="list-group-item team-list-heading">Teams</li>
+      <% @teams.each do |team| %>
+        <%= link_to team['name'],
+          "/league/#{@league['competition']['id']}/team/#{team['id']}",
+          :class => "list-group-item team-list-item team-list-item-text" %>
+      <% end %>
+    </ul>
+
+  <div class="fixture-container">
+    <div class="main-area fixture-list-container">
+    <ul class="list-group fixture-list col-6">
+      <li class="list-group-item team-list-heading">Fixtures</li>
+      <% @selected_team_matches.each do |match| %>
+        <li class="list-group-item fixture-list-item">
+            <div class="team-name">
+              <div><%= "#{match['homeTeam']['name']} - #{match['awayTeam']['name']}" %> </div>
+            </div>
+            <div><%= "#{match['score']['fullTime']['homeTeam']} - #{match['score']['fullTime']['awayTeam']}" %> </div>
+       </li>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+  </div>

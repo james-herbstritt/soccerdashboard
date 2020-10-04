@@ -29,4 +29,14 @@ class FootballDataService
     url = "https://api.football-data.org/v2/competitions/#{id}/teams/"
     HTTParty.get(url, headers: { 'X-Auth-Token' => ENV['FOOTBALL_AUTH_TOKEN'] })
   end
+
+  def team(id)
+    url = "https://api.football-data.org/v2/teams/#{id}"
+    HTTParty.get(url, headers: { 'X-Auth-Token' => ENV['FOOTBALL_AUTH_TOKEN'] })
+  end
+
+  def matches_for_team(id)
+    url = "https://api.football-data.org/v2/teams/#{id}/matches"
+    HTTParty.get(url, headers: { 'X-Auth-Token' => ENV['FOOTBALL_AUTH_TOKEN'] })
+  end
 end
