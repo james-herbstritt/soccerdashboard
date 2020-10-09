@@ -2,25 +2,48 @@
     <ul class="list-group team-list">
       <li class="list-group-item team-list-heading">Teams</li>
       <% @teams.each do |team| %>
-        <%= link_to team['name'],
-          "/league/#{@league['competition']['id']}/team/#{team['id']}",
-          :class => "list-group-item team-list-item team-list-item-text" %>
+        <% if team['id'] == @selected_team['id'] %>
+          <div class="list-group-item selected-team-list-item"><%= team['name'] %></div>
+        <% else %>
+          <%= link_to team['name'],
+            "/league/#{@league['competition']['id']}/team/#{team['id']}",
+            :class => "list-group-item team-list-item team-list-item-text" %>
+        <% end %>
       <% end %>
     </ul>
 
   <div class="fixture-container">
     <div class="main-area fixture-list-container">
-    <ul class="list-group fixture-list col-6">
+      <div class="fixture-list-margin">
+    <ul class="list-group fixture-list">
       <li class="list-group-item team-list-heading">Fixtures</li>
       <% @selected_team_matches.each do |match| %>
         <li class="list-group-item fixture-list-item">
             <div class="team-name">
-              <div><%= "#{match['homeTeam']['name']} - #{match['awayTeam']['name']}" %> </div>
+              <div>
+                <% if match['homeTeam']['name'].eql? @selected_team['name'] %>
+                  <%= "#{match['homeTeam']['name']} - #{match['awayTeam']['name']}" %></div>
+                <% else %>
+                  <%= "#{match['awayTeam']['name']} - #{match['homeTeam']['name']}" %></div>
+                <% end %>
             </div>
-            <div><%= "#{match['score']['fullTime']['homeTeam']} - #{match['score']['fullTime']['awayTeam']}" %> </div>
+            <% if match['score']['fullTime']['homeTeam'].nil? %>
+              <div>
+                <%= DateTime.strptime(match['utcDate'], '%Y-%m-%dT%H:%M:%SZ').localtime.strftime("%a, %b %e, %l:%M %p") %>
+              </div>
+            <% elsif match['homeTeam']['name'].eql? @selected_team['name'] %>
+              <div>
+                <%= "#{match['score']['fullTime']['homeTeam']} - #{match['score']['fullTime']['awayTeam']}" %>
+              </div>
+            <% else %>
+              <div>
+                <%= "#{match['score']['fullTime']['awayTeam']} - #{match['score']['fullTime']['homeTeam']}" %>
+              </div>
+            <% end %>
        </li>
       <% end %>
     </ul>
     </div>
+    </div>
   </div>
-  </div>
+</div>

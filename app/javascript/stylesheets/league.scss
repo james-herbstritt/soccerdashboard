@@ -1,11 +1,20 @@
 .team-list-container {
   display: flex;
   padding-left: 0px;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .team-list {
   border-radius: 0px;
   flex-shrink: 0;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.team-list::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .team-list-heading {
@@ -15,12 +24,17 @@
   color: $baby-powder;
 }
 
+.selected-team-list-item {
+  background-color: $middle-purple;
+  color: $baby-powder;
+}
+
 .team-list-item {
   background-color: $baby-powder;
 }
 
 .team-list-item:hover {
-  background-color: $emerald;
+  background-color: $middle-purple;
 }
 
 .team-list-item-text {
@@ -45,17 +59,35 @@
     "main main main"
     "main main main";
   width: 100%;
-  height: 100%;
+  height: auto;
+  background-color: $baby-powder;
 }
 
 .fixture-list-container {
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .fixture-list {
   flex-grow: 1;
-  margin: 3%;
+  width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.fixture-list-margin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 45%;
+}
+
+.fixture-list::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .team-name {
